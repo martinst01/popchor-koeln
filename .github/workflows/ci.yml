@@ -54,3 +54,52 @@ jobs:
           CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
 
       - run: nix flake check
+
+  deploy-netlify:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    needs: [app, nix]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup pipeline
+        uses: ./.github/actions/setup
+        with:
+          CACHIX_AUTH_TOKEN: ${{ secrets.CACHIX_AUTH_TOKEN }}
+
+      - name: Get deploy id
+        id: get-deploy-id
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          deploy_id="$(netlify api listSiteDeploys --data '{"site_id": "${{ secrets.NETLIFY_SITE_ID }}"}' \
+            | jq --raw-output '.[] | select(.commit_ref == "${{ github.sha }}") | .id')"
+
+          echo "deploy id is $deploy_id"
+          echo "deploy-id=$deploy_id" >> $GITHUB_OUTPUT
+
+      - name: Wait for deployment
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        timeout-minutes: 5
+        run: |
+          while true; do
+            deploy_state="$(netlify api getDeploy --data '{"deploy_id": "${{ steps.get-deploy-id.outputs.deploy-id }}"}' \
+              | jq --raw-output '.state')"
+
+            if [[ "$deploy_state" == "ready" ]]; then
+              echo "deployment built successfully, continuing..."
+              break
+            fi
+
+            echo "deploy state is '$deploy_state', waiting 5s..."
+            sleep 5
+          done
+
+      - name: Publish deployment
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: |
+          netlify api restoreSiteDeploy --data '{"site_id": "${{ secrets.NETLIFY_SITE_ID }}", "deploy_id": "${{ steps.get-deploy-id.outputs.deploy-id }}"}' > /dev/null

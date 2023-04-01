@@ -11,6 +11,8 @@
     {
       devShells.${system}.default = pkgs.mkShell {
         buildInputs = [
+          pkgs.jq
+          pkgs.netlify-cli
           pkgs.nodejs_latest
           pkgs.nodePackages_latest.pnpm
         ];
