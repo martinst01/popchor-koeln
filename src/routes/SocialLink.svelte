@@ -4,7 +4,7 @@
 </script>
 
 <a
-    class="bg-slate-700 block p-2 sm:p-3 text-slate-200 rounded-full focus-within:outline-offset-2"
+    class="block rounded-full bg-slate-700 p-2 text-slate-200 focus-within:outline-offset-2 sm:p-3"
     href={link}
     target="_blank"
     rel="noopener noreferrer"

@@ -24,9 +24,9 @@
 
 <slot />
 
-<footer class="border-t border-slate-600 py-8 mt-4 bg-[#BBBAB5]">
-    <div class="container mx-auto flex justify-between px-4 items-center">
-        <a class="text-blue-700 hover:text-blue-900 focus:text-blue-90 text-sm" href="/impressum">Impressum</a>
+<footer class="mt-4 border-t border-slate-600 bg-[#BBBAB5] py-8">
+    <div class="container mx-auto flex items-center justify-between px-4">
+        <a class="focus:text-blue-90 text-sm text-blue-700 hover:text-blue-900" href="/impressum">Impressum</a>
 
         <div class="flex gap-2 sm:gap-4">
             <SocialLink link="https://www.facebook.com/dacchord/" icon={Facebook} />
@@ -35,6 +35,6 @@
             <SocialLink link="https://www.instagram.com/dacchord/" icon={Instagram} />
         </div>
 
-        <a class="text-blue-700 hover:text-blue-900 focus:text-blue-900 text-sm" href="/datenschutz">Datenschutz</a>
+        <a class="text-sm text-blue-700 hover:text-blue-900 focus:text-blue-900" href="/datenschutz">Datenschutz</a>
     </div>
 </footer>
