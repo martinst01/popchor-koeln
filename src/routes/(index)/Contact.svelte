@@ -1,6 +1,6 @@
 <script type="ts">
+    import Section from '$lib/components/Section.svelte';
     import Checkbox from './Checkbox.svelte';
-    import Section from './Section.svelte';
 </script>
 
 <Section title="Kontakt">

@@ -1,7 +1,7 @@
 <script type="ts">
+    import Section from '$lib/components/Section.svelte';
     import Contact from './Contact.svelte';
     import Gig from './Gig.svelte';
-    import Section from './Section.svelte';
 
     const gigs = [
         {
