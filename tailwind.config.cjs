@@ -9,6 +9,9 @@ const config = {
 			screens: {
 				xs: '480px',
 			},
+			colors: {
+				accent: '#FF6666',
+			},
 		},
 	},
 

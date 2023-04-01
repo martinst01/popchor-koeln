@@ -11,7 +11,7 @@
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class="border-l-2 border-[#FF6666] pl-2 py-1" on:click={() => (expanded = !expanded)}>
+<div class="border-l-2 border-accent pl-2 py-1 cursor-pointer" on:click={() => (expanded = !expanded)}>
 	<h3 class="text-lg font-bold" class:mb-2={expanded}>{title}</h3>
 
 	{#if expanded}
