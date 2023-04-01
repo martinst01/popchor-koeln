@@ -10,6 +10,7 @@ specifiers:
   eslint: ^8.37.0
   eslint-config-prettier: ^8.8.0
   eslint-plugin-svelte3: ^4.0.0
+  lucide-svelte: ^0.129.0
   postcss: ^8.4.21
   postcss-load-config: ^4.0.1
   prettier: ^2.8.7
@@ -33,6 +34,7 @@ devDependencies:
   eslint: 8.37.0
   eslint-config-prettier: 8.8.0_eslint@8.37.0
   eslint-plugin-svelte3: 4.0.0_liacp2iv7tqpbixd6a377yfa6e
+  lucide-svelte: 0.129.0_svelte@3.57.0
   postcss: 8.4.21
   postcss-load-config: 4.0.1_postcss@8.4.21
   prettier: 2.8.7
@@ -1279,6 +1281,14 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       yallist: 4.0.0
+    dev: true
+
+  /lucide-svelte/0.129.0_svelte@3.57.0:
+    resolution: {integrity: sha512-WSmxgL+B/3p7K1d86nk9O/xw8t8MxtLubHCkxFlimmo4NSCDLZuGGQifwKNC0NJ1n10BAVFdPW+SMI1611ucuQ==}
+    peerDependencies:
+      svelte: ^3.49.0
+    dependencies:
+      svelte: 3.57.0
     dev: true
 
   /magic-string/0.27.0:

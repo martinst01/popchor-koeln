@@ -110,7 +110,7 @@
 <Section title="Termine">
 	<div class="space-y-4">
 		{#each gigs as gig}
-			<Gig {...gig}>
+			<Gig title={gig.title} time={gig.time} place={gig.place} price={gig.price} entryTime={gig.entryTime}>
 				<span class="after:content-['>>>']">{gig.description}</span>
 				<a
 					href={gig.link}

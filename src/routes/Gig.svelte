@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { ChevronDown, ChevronRight } from 'lucide-svelte';
 	import GigLine from './GigLine.svelte';
 
 	export let title: string;
@@ -8,11 +9,24 @@
 	export let entryTime: string;
 
 	let expanded = false;
+	const toggle = () => (expanded = !expanded);
 </script>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class="border-l-2 border-accent pl-2 py-1 cursor-pointer" on:click={() => (expanded = !expanded)}>
-	<h3 class="text-lg font-bold" class:mb-2={expanded}>{title}</h3>
+<div
+	class="cursor-pointer border-l-2 border-accent py-1 pl-2"
+	on:click={toggle}
+	on:keypress={toggle}
+	role="button"
+	tabindex="0"
+>
+	<h3 class="flex items-center text-lg font-bold" class:mb-2={expanded}>
+		{#if expanded}
+			<ChevronDown class="inline" size="16" />
+		{:else}
+			<ChevronRight class="inline" size="16" />
+		{/if}
+		{title}
+	</h3>
 
 	{#if expanded}
 		<GigLine label="Wann"><div class="font-bold">{time}</div></GigLine>
