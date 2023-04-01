@@ -1,6 +1,6 @@
 <script type="ts">
-	import '@fontsource/open-sans';
-	import '../app.postcss';
+    import '@fontsource/open-sans';
+    import '../app.postcss';
 </script>
 
 <slot />
