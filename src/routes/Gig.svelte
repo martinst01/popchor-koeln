@@ -13,13 +13,16 @@
 </script>
 
 <div
-	class="cursor-pointer border-l-2 border-accent py-1 pl-2"
+	class="
+		cursor-pointer border-l-2 border-accent py-1 pl-2
+		focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600
+	"
 	on:click={toggle}
 	on:keypress={toggle}
 	role="button"
 	tabindex="0"
 >
-	<h3 class="flex items-center text-lg font-bold" class:mb-2={expanded}>
+	<h3 class="flex items-baseline text-lg font-bold" class:mb-2={expanded}>
 		{#if expanded}
 			<ChevronDown class="inline" size="16" />
 		{:else}
