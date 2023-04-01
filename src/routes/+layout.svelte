@@ -1,4 +1,5 @@
-<script>
+<script type="ts">
+	import '@fontsource/open-sans';
 	import '../app.postcss';
 </script>
 
