@@ -59,6 +59,10 @@
     ];
 </script>
 
+<svelte:head>
+    <title>Startseite - popCHORköln</title>
+</svelte:head>
+
 <Section title="Chor">
     <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolor nihil unde, natus reiciendis possimus
