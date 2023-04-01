@@ -15,7 +15,25 @@ const config = {
         },
     },
 
-    plugins: [],
+    corePlugins: {
+        container: false,
+    },
+
+    plugins: [
+        function ({ addComponents }) {
+            addComponents({
+                '.container': {
+                    maxWidth: '100%',
+                    '@screen sm': {
+                        maxWidth: '640px',
+                    },
+                    '@screen md': {
+                        maxWidth: '768px',
+                    },
+                },
+            });
+        },
+    ],
 };
 
 module.exports = config;
