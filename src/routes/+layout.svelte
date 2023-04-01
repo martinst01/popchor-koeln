@@ -1,4 +1,4 @@
-<script type="ts">
+<script lang="ts">
     import imageHeader from '$lib/assets/header.png';
     import '@fontsource/open-sans';
     import { Facebook, Instagram, Mail, Youtube } from 'lucide-svelte';
