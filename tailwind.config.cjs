@@ -5,7 +5,11 @@ const config = {
 		fontFamily: {
 			sans: ['Open Sans'],
 		},
-		extend: {},
+		extend: {
+			screens: {
+				xs: '480px',
+			},
+		},
 	},
 
 	plugins: [],
