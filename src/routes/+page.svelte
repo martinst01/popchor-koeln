@@ -1,5 +1,6 @@
 <script type="ts">
 	import imageHeader from '$lib/assets/header.png';
+	import Contact from './Contact.svelte';
 	import Gig from './Gig.svelte';
 	import Section from './Section.svelte';
 
@@ -122,3 +123,5 @@
 		{/each}
 	</div>
 </Section>
+
+<Contact />
