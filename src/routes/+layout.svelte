@@ -1,7 +1,9 @@
 <script type="ts">
     import imageHeader from '$lib/assets/header.png';
     import '@fontsource/open-sans';
+    import { Facebook, Instagram, Mail, Youtube } from 'lucide-svelte';
     import '../app.postcss';
+    import SocialLink from './SocialLink.svelte';
 </script>
 
 <header
@@ -21,3 +23,18 @@
 </header>
 
 <slot />
+
+<footer class="border-t border-slate-600 py-8 mt-4 bg-[#BBBAB5]">
+    <div class="container mx-auto flex justify-between px-4 items-center">
+        <a class="text-blue-700 hover:text-blue-900 focus:text-blue-90 text-sm" href="/impressum">Impressum</a>
+
+        <div class="flex gap-2 sm:gap-4">
+            <SocialLink link="https://www.facebook.com/dacchord/" icon={Facebook} />
+            <SocialLink link="mailto:info.dacchord@gmail.com" icon={Mail} />
+            <SocialLink link="https://www.youtube.com/channel/UCT14OZsAo7IzRTJDFofQiQA" icon={Youtube} />
+            <SocialLink link="https://www.instagram.com/dacchord/" icon={Instagram} />
+        </div>
+
+        <a class="text-blue-700 hover:text-blue-900 focus:text-blue-900 text-sm" href="/datenschutz">Datenschutz</a>
+    </div>
+</footer>
