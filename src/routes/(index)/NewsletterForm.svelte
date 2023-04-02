@@ -8,6 +8,10 @@
     let email: string;
     let acceptTerms = false;
     let status: FormStatus = 'ready';
+    let emailExistsAlready = false;
+    let textError: string | null = null;
+
+    $: textError = emailExistsAlready ? 'Diese Email ist bereits bei unserem Newsletter eingetragen!' : null;
 
     const onSubmit = async () => {
         if (!acceptTerms) {
@@ -26,6 +30,13 @@
 
             status = 'success';
         } catch (e) {
+            if (e instanceof Response) {
+                const json = await e.json();
+
+                if (json?.emailExistsAlready) {
+                    emailExistsAlready = true;
+                }
+            }
             status = 'error';
         }
     };
@@ -64,6 +75,6 @@
             </span>
         </label>
 
-        <SubmitButton disabled={!acceptTerms} {status} text="Abonnieren" />
+        <SubmitButton disabled={!acceptTerms} {status} text="Abonnieren" {textError} />
     </form>
 </div>
