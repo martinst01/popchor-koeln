@@ -14,9 +14,9 @@
 
 <div
     class="
-		cursor-pointer border-l-2 border-accent py-1 pl-2
-		focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600
-	"
+        cursor-pointer border-l-2 border-accent py-1 pl-2
+        focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-600
+    "
     on:click={toggle}
     on:keypress={toggle}
     role="button"

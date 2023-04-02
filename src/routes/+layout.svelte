@@ -42,11 +42,11 @@
 
 <header
     class="
-		bg-[#BBBAB5] bg-[length:40rem] bg-bottom bg-no-repeat p-8 pb-16
-		sm:bg-[length:50rem] sm:pb-20
-		md:bg-[length:60rem] md:pb-24
-		lg:bg-[length:80rem] lg:pb-32
-	"
+        bg-[#BBBAB5] bg-[length:40rem] bg-bottom bg-no-repeat p-8 pb-16
+        sm:bg-[length:50rem] sm:pb-20
+        md:bg-[length:60rem] md:pb-24
+        lg:bg-[length:80rem] lg:pb-32
+    "
     style="background-image: url('{imageHeader}'"
 >
     <div class="container relative mx-auto">
