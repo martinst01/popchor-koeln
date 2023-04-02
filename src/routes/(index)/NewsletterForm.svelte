@@ -1,5 +1,7 @@
 <script lang="ts">
+    import { sendToApi } from '$lib/api';
     import type { FormStatus } from '$lib/types';
+    import type { RequestBody } from '../api/newsletter-form/+server';
     import Checkbox from './Checkbox.svelte';
     import SubmitButton from './SubmitButton.svelte';
 
@@ -8,10 +10,19 @@
     let status: FormStatus = 'ready';
 
     const onSubmit = async () => {
+        if (!acceptTerms) {
+            return;
+        }
+
         status = 'loading';
 
+        const body = {
+            email,
+            acceptTerms,
+        } satisfies RequestBody;
+
         try {
-            await new Promise((resolve) => setTimeout(resolve, 2000));
+            await sendToApi('/api/newsletter-form', body);
 
             status = 'success';
         } catch (e) {
