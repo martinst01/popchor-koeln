@@ -22,17 +22,17 @@
     role="button"
     tabindex="0"
 >
-    <h3 class="flex items-baseline text-lg font-bold" class:mb-2={expanded}>
+    <h3 class="text-md flex items-center font-bold" class:mb-2={expanded}>
         {#if expanded}
-            <ChevronDown class="inline" size="16" />
+            <ChevronDown class="-ml-1 inline" size="20" />
         {:else}
-            <ChevronRight class="inline" size="16" />
+            <ChevronRight class="-ml-1 inline" size="20" />
         {/if}
         {title}
     </h3>
 
     {#if expanded}
-        <GigLine label="Wann"><div class="font-bold">{time}</div></GigLine>
+        <GigLine label="Wann">{time}</GigLine>
         <GigLine label="Wo">
             <div>
                 {#each place as placeItem}
@@ -45,6 +45,6 @@
 
         <p class="mt-2 text-sm"><slot /></p>
     {:else}
-        <p class="text-md">{time} @ {place[0]}</p>
+        <p class="text-sm">{time} @ {place[0]}</p>
     {/if}
 </div>
