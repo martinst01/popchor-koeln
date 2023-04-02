@@ -63,7 +63,7 @@
     <title>Startseite - popCHORköln</title>
 </svelte:head>
 
-<Section title="Chor">
+<Section id="chor" title="Chor">
     <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolor nihil unde, natus reiciendis possimus
         velit magni voluptatum reprehenderit iure, similique odio ullam maxime corrupti qui itaque ad, repellendus
@@ -79,7 +79,7 @@
     </p>
 </Section>
 
-<Section title="Chorleiter">
+<Section id="chorleiter" title="Chorleiter">
     <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolor nihil unde, natus reiciendis possimus
         velit magni voluptatum reprehenderit iure, similique odio ullam maxime corrupti qui itaque ad, repellendus
@@ -95,7 +95,7 @@
     </p>
 </Section>
 
-<Section title="Termine">
+<Section id="termine" title="Termine">
     <div class="space-y-4">
         {#each gigs as gig}
             <Gig title={gig.title} time={gig.time} place={gig.place} price={gig.price} entryTime={gig.entryTime}>

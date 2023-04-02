@@ -4,7 +4,7 @@
     import NewsletterForm from './NewsletterForm.svelte';
 </script>
 
-<Section title="Kontakt">
+<Section id="kontakt" title="Kontakt">
     <NewsletterForm />
 
     <ContactForm classes="mt-6" />

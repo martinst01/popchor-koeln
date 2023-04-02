@@ -1,8 +1,9 @@
 <script lang="ts">
+    export let id: string | null = null;
     export let title: string;
 </script>
 
-<section class="container mx-auto my-8 p-4">
+<section {id} class="container mx-auto my-8 p-4">
     <hgroup
         class="
 			before:-z-1 relative mb-4 flex justify-center
