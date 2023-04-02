@@ -22,3 +22,4 @@ pnpm run dev -- --open
 
 -   Set site name
 -   Lock auto publishing
+-   Set up environment variables (see `.env.example`)
