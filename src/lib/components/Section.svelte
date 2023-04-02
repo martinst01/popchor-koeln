@@ -2,7 +2,7 @@
     export let title: string;
 </script>
 
-<section class="container mx-auto px-4 py-4">
+<section class="container mx-auto my-8 p-4">
     <hgroup
         class="
 			before:-z-1 relative mb-4 flex justify-center
