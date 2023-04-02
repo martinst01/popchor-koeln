@@ -15,7 +15,7 @@
 
     let status: FormStatus = 'ready';
 
-    const onSubmit = async (e: Event) => {
+    const onSubmit = async () => {
         status = 'loading';
 
         var body = {

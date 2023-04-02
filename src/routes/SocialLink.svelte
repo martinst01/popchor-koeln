@@ -1,6 +1,8 @@
 <script lang="ts">
+    import type { SvelteComponent } from 'svelte';
+
     export let link: string;
-    export let icon: any;
+    export let icon: typeof SvelteComponent;
 </script>
 
 <a
