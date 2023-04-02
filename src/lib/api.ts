@@ -1,7 +1,11 @@
 import { json } from '@sveltejs/kit';
 import type { ZodType } from 'zod';
 
-export const parseRequestBody = async <T>(request: Request, schema: ZodType<T>, handler: (data: T) => Response) => {
+export const parseRequestBody = async <T>(
+    request: Request,
+    schema: ZodType<T>,
+    handler: (data: T) => Promise<Response>,
+) => {
     const bodyRaw = await request.json();
 
     const result = schema.safeParse(bodyRaw);
@@ -9,7 +13,7 @@ export const parseRequestBody = async <T>(request: Request, schema: ZodType<T>, 
         return json({ validationErrors: result.error.issues }, { status: 400 });
     }
 
-    return handler(result.data);
+    return await handler(result.data);
 };
 
 export const sendToApi = async <T>(url: string, body: T) => {

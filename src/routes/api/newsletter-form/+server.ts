@@ -10,7 +10,7 @@ const RequestBodySchema = z.object({
 export type RequestBody = z.infer<typeof RequestBodySchema>;
 
 export const POST: RequestHandler = async ({ request }) => {
-    return await parseRequestBody(request, RequestBodySchema, (body) => {
+    return await parseRequestBody(request, RequestBodySchema, async (body) => {
         console.log(body);
 
         return json({ success: true });
