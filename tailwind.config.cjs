@@ -10,7 +10,10 @@ const config = {
                 xs: '480px',
             },
             colors: {
-                accent: '#FF6666',
+                accent: {
+                    DEFAULT: '#d57e56',
+                    light: '#f2936a',
+                },
             },
         },
     },
