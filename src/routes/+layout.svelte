@@ -89,7 +89,7 @@
 
 <footer class="border-t border-slate-500 py-8">
     <div class="container mx-auto flex items-center justify-between px-4">
-        <a class="flex-1 text-sm text-blue-700 hover:text-blue-900 focus:text-blue-900" href="/impressum">Impressum</a>
+        <a class="flex-1 text-sm text-blue-500 hover:text-blue-700 focus:text-blue-700" href="/impressum">Impressum</a>
 
         <div class="flex gap-2 sm:gap-4">
             <SocialLink link="https://www.facebook.com/dacchord/" icon={Facebook} />
@@ -98,7 +98,7 @@
             <SocialLink link="https://www.instagram.com/dacchord/" icon={Instagram} />
         </div>
 
-        <a class="flex-1 text-right text-sm text-blue-700 hover:text-blue-900 focus:text-blue-900" href="/datenschutz"
+        <a class="flex-1 text-right text-sm text-blue-500 hover:text-blue-700 focus:text-blue-700" href="/datenschutz"
             >Datenschutz</a
         >
     </div>

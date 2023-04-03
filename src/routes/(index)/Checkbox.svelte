@@ -7,7 +7,7 @@
     type="button"
     class="
         inline-flex w-8 flex-none cursor-pointer rounded-full p-px transition-colors duration-100 ease-in-out
-        focus-within:outline-slate-600 focus-visible:outline-offset-4
+        focus-within:outline-slate-500 focus-visible:outline-offset-4
     "
     class:bg-accent={enabled}
     class:bg-slate-200={!enabled}
