@@ -45,12 +45,11 @@
 <Section id="termine" title="Termine">
     <GigList gigs={gigs.slice(0, 3)} />
 
-    <a
-        href="/termine"
-        class="mt-2 flex items-center justify-end text-sm text-blue-500 hover:text-blue-700 focus:text-blue-700"
-    >
-        Zu allen Termine <ChevronRight class="inline" size={20} />
-    </a>
+    <div class="mt-2 flex items-center justify-end">
+        <a href="/termine" class="text-sm text-blue-500 hover:text-blue-700 focus:text-blue-700">
+            Zu allen Termine <ChevronRight class="inline" size={20} />
+        </a>
+    </div>
 </Section>
 
 <Contact />
