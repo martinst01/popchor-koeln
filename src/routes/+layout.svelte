@@ -1,49 +1,15 @@
 <script lang="ts">
-    import { browser } from '$app/environment';
     import imageHeader160 from '$lib/assets/header-160px.png';
     import imageHeader240 from '$lib/assets/header-240px.png';
     import imageHeader320 from '$lib/assets/header-320px.png';
     import '@fontsource/open-sans';
-    import { Menu, X } from 'lucide-svelte';
+    import { Menu } from 'lucide-svelte';
     import '../app.postcss';
     import Footer from './Footer.svelte';
+    import Navigation from './Navigation.svelte';
 
-    let menuExpanded = false;
-    let tabIndexNav: number | null;
-
-    $: if (browser) {
-        menuExpanded
-            ? document.body.classList.add('overflow-hidden')
-            : document.body.classList.remove('overflow-hidden');
-    }
-
-    $: tabIndexNav = menuExpanded ? null : -1;
-
-    const toggleMenu = () => {
-        if (menuExpanded) {
-            menuExpanded = false;
-            history.back();
-        } else {
-            menuExpanded = true;
-            history.pushState(null, '', null);
-        }
-    };
-
-    const onKeydown = (e: KeyboardEvent) => {
-        if (e.key === 'Escape' && menuExpanded) {
-            toggleMenu();
-        }
-    };
-
-    const onPopstate = () => {
-        if (menuExpanded) {
-            menuExpanded = false;
-        }
-    };
+    let toggleNavigation: () => void;
 </script>
-
-<svelte:window on:popstate={onPopstate} />
-<svelte:body on:keydown={onKeydown} />
 
 <header>
     <div class="container relative mx-auto p-8 pb-4">
@@ -55,7 +21,7 @@
             </h1>
         </a>
 
-        <button class="absolute right-6 top-6 p-2" on:click={toggleMenu}>
+        <button class="absolute right-6 top-6 p-2" on:click={toggleNavigation}>
             <Menu class="text-accent" size={32} />
         </button>
     </div>
@@ -70,37 +36,7 @@
     </div>
 </header>
 
-<nav
-    class="fixed inset-0 z-10 bg-white/90 transition-transform duration-200 ease-in-out"
-    class:-translate-y-full={!menuExpanded}
->
-    <div class="container relative mx-auto p-8">
-        <ul class="flex flex-col gap-4 p-4">
-            <li>
-                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="#chor">Chor</a>
-            </li>
-            <li>
-                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="#chorleiter"
-                    >Chorleiter</a
-                >
-            </li>
-            <li>
-                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="#termine"
-                    >Termine</a
-                >
-            </li>
-            <li>
-                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="#kontakt"
-                    >Kontakt</a
-                >
-            </li>
-        </ul>
-
-        <button tabindex={tabIndexNav} class="absolute right-6 top-6 p-2" on:click={toggleMenu}>
-            <X class="hover:text-slate-500" size={32} />
-        </button>
-    </div>
-</nav>
+<Navigation bind:toggleNavigation />
 
 <slot />
 
