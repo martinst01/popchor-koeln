@@ -18,7 +18,7 @@ const apiPut = async (url: string, body: Record<string, string>) => {
 
 export const addContactToAudience = async (email: string) => {
     try {
-        await apiPut(`/lists/${MAILCHIMP_AUDIENCE_ID}/members`, {
+        await apiPut(`/lists/${MAILCHIMP_AUDIENCE_ID}/members/${encodeURIComponent(email)}`, {
             email_address: email,
             status: 'subscribed',
         });
