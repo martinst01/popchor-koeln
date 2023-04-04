@@ -3,6 +3,9 @@
 ## Getting started
 
 ```bash
+# setup environment variables, start off by using .env.example
+cp .env.example .env
+
 pnpm install
 
 pnpm run dev
