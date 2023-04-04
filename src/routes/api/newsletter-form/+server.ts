@@ -1,5 +1,5 @@
 import { parseRequestBody } from '$lib/api';
-import { addContactToAudience } from '$lib/mailchimp';
+import { subscribeToNewsletter } from '$lib/newsletter';
 import { json } from '@sveltejs/kit';
 import { z } from 'zod';
 import type { RequestHandler } from './$types';
@@ -12,7 +12,7 @@ export type RequestBody = z.infer<typeof RequestBodySchema>;
 
 export const POST: RequestHandler = async ({ request }) => {
     return await parseRequestBody(request, RequestBodySchema, async (body) => {
-        const success = await addContactToAudience(body.email);
+        const success = await subscribeToNewsletter(body.email);
 
         if (success) {
             return json({ success: true });

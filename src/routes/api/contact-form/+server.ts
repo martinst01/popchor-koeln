@@ -6,7 +6,7 @@ import {
 } from '$env/static/private';
 import { parseRequestBody } from '$lib/api';
 import { sendMail } from '$lib/mail';
-import { addContactToAudience } from '$lib/mailchimp';
+import { subscribeToNewsletter } from '$lib/newsletter';
 import { json } from '@sveltejs/kit';
 import { z } from 'zod';
 import type { RequestHandler } from './$types';
@@ -20,19 +20,19 @@ const RequestBodySchema = z.object({
 });
 export type RequestBody = z.infer<typeof RequestBodySchema>;
 
-const handleNewsletterCreation = async (newsletter: boolean, email: string) => {
+const handleNewsletterSubscription = async (newsletter: boolean, email: string) => {
     if (!newsletter) {
         return 'nicht abonniert';
     }
 
-    const success = await addContactToAudience(email);
+    const success = await subscribeToNewsletter(email);
 
     return success ? 'abbonniert' : 'Abonnieren fehlgeschlagen';
 };
 
 export const POST: RequestHandler = async ({ request }) => {
     return await parseRequestBody(request, RequestBodySchema, async (body) => {
-        const newsletterResult = await handleNewsletterCreation(body.newsletter, body.email);
+        const newsletterResult = await handleNewsletterSubscription(body.newsletter, body.email);
 
         const emailText = `Name: ${body.name}\nNewsletter: ${newsletterResult}\n\n${body.message}`;
 

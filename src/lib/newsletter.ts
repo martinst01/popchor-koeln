@@ -16,18 +16,18 @@ const apiPut = async (url: string, body: Record<string, string>) => {
     }
 };
 
-export const addContactToAudience = async (email: string) => {
+export const subscribeToNewsletter = async (email: string) => {
     try {
         await apiPut(`/lists/${MAILCHIMP_AUDIENCE_ID}/members/${encodeURIComponent(email)}`, {
             email_address: email,
             status: 'subscribed',
         });
 
-        console.info('contact successfully added to audience.');
+        console.info('successfully subscribed to newsletter.');
 
         return true;
     } catch (e) {
-        console.error('addContactToAudience failed.', e);
+        console.error('subscribe to newsletter failed.', e);
 
         return false;
     }
