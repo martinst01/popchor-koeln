@@ -12,15 +12,12 @@ export type RequestBody = z.infer<typeof RequestBodySchema>;
 
 export const POST: RequestHandler = async ({ request }) => {
     return await parseRequestBody(request, RequestBodySchema, async (body) => {
-        const result = await addContactToAudience(body.email);
+        const success = await addContactToAudience(body.email);
 
-        switch (result) {
-            case 'success':
-                return json({ success: true });
-            case 'email-exists-already':
-                return json({ success: false, emailExistsAlready: true }, { status: 400 });
-            case 'error':
-                return json({ success: false }, { status: 500 });
+        if (success) {
+            return json({ success: true });
         }
+
+        return json({ success: false }, { status: 500 });
     });
 };

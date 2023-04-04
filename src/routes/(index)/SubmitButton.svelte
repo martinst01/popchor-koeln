@@ -5,7 +5,6 @@
     export let status: FormStatus = 'ready';
     export let disabled = false;
     export let text: string;
-    export let textError: string | null = null;
 </script>
 
 <button
@@ -25,12 +24,7 @@
     {:else if status === 'success'}
         <Check class="mr-1 inline" size={16} /> {text} war erfolgreich!
     {:else if status === 'error'}
-        <MailWarning class="mr-1 inline" size={16} />
-        {#if textError === null}
-            {text} fehlgeschlagen, bitte versuchen Sie es später erneut.
-        {:else}
-            {textError}
-        {/if}
+        <MailWarning class="mr-1 inline" size={16} /> {text} fehlgeschlagen, bitte versuchen Sie es später erneut.
     {:else}
         {text}
     {/if}
