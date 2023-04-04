@@ -20,7 +20,7 @@
     class:disabled:bg-red-600={status === 'error'}
 >
     {#if status === 'loading'}
-        <Loader2 class="mr-1 inline animate-spin" size={16} /> Speichern, bitte warten..
+        <Loader2 class="mr-1 inline animate-spin" size={16} /> Bitte warten..
     {:else if status === 'success'}
         <Check class="mr-1 inline" size={16} /> {text} war erfolgreich!
     {:else if status === 'error'}
