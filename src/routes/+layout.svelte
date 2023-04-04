@@ -9,12 +9,15 @@
     import SocialLink from './SocialLink.svelte';
 
     let menuExpanded = false;
+    let tabIndexNav: number | null;
 
     $: if (browser) {
         menuExpanded
             ? document.body.classList.add('overflow-hidden')
             : document.body.classList.remove('overflow-hidden');
     }
+
+    $: tabIndexNav = menuExpanded ? null : -1;
 
     const toggleMenu = () => {
         if (menuExpanded) {
@@ -73,13 +76,27 @@
 >
     <div class="container relative mx-auto p-8">
         <ul class="flex flex-col gap-4 p-4">
-            <li><a class="text-lg hover:text-accent active:text-accent" href="#chor">Chor</a></li>
-            <li><a class="text-lg hover:text-accent active:text-accent" href="#chorleiter">Chorleiter</a></li>
-            <li><a class="text-lg hover:text-accent active:text-accent" href="#termine">Termine</a></li>
-            <li><a class="text-lg hover:text-accent active:text-accent" href="#kontakt">Kontakt</a></li>
+            <li>
+                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="#chor">Chor</a>
+            </li>
+            <li>
+                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="#chorleiter"
+                    >Chorleiter</a
+                >
+            </li>
+            <li>
+                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="#termine"
+                    >Termine</a
+                >
+            </li>
+            <li>
+                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="#kontakt"
+                    >Kontakt</a
+                >
+            </li>
         </ul>
 
-        <button class="absolute right-6 top-6 p-2" on:click={toggleMenu}>
+        <button tabindex={tabIndexNav} class="absolute right-6 top-6 p-2" on:click={toggleMenu}>
             <X class="hover:text-slate-500" size={32} />
         </button>
     </div>
