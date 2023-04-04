@@ -22,11 +22,11 @@
     role="button"
     tabindex={0}
 >
-    <h3 class="text-md flex items-center font-bold" class:mb-2={expanded}>
+    <h3 class="flex items-start font-bold" class:mb-2={expanded}>
         {#if expanded}
-            <ChevronDown class="-ml-1 inline" size={20} />
+            <ChevronDown class="-ml-1 mt-0.5 inline-block flex-shrink-0" size={20} />
         {:else}
-            <ChevronRight class="-ml-1 inline" size={20} />
+            <ChevronRight class="-ml-1 mt-0.5 inline-block flex-shrink-0" size={20} />
         {/if}
         {title}
     </h3>
