@@ -11,5 +11,5 @@
     target="_blank"
     rel="noopener noreferrer"
 >
-    <svelte:component this={icon} size="20" />
+    <svelte:component this={icon} size={20} />
 </a>
