@@ -46,7 +46,7 @@
     <GigList gigs={gigs.slice(0, 3)} />
 
     <div class="mt-2 flex items-center justify-end">
-        <a href="/termine" class="text-sm text-blue-500 hover:text-blue-700 focus:text-blue-700">
+        <a href="/termine" class="inline-flex text-sm text-blue-500 hover:text-blue-700 focus:text-blue-700">
             Zu allen Termine <ChevronRight class="inline" size={20} />
         </a>
     </div>
