@@ -6,7 +6,7 @@
 </script>
 
 <a
-    class="block rounded-full bg-slate-700 p-2 text-slate-100 focus-within:outline-offset-2 hover:bg-slate-500 active:bg-slate-500 sm:p-3"
+    class="block rounded-full bg-slate-700 p-3 text-slate-100 focus-within:outline-offset-2 hover:bg-slate-500 active:bg-slate-500"
     href={link}
     target="_blank"
     rel="noopener noreferrer"
