@@ -1,9 +1,11 @@
 <script lang="ts">
-    import GigList from '$lib/components/gigs/GigList.svelte';
     import Section from '$lib/components/Section.svelte';
+    import GigList from '$lib/components/gigs/GigList.svelte';
     import { gigs } from '$lib/data/gigs';
     import { ChevronRight } from 'lucide-svelte';
     import Contact from './Contact.svelte';
+
+    const gigCount = 5;
 </script>
 
 <svelte:head>
@@ -43,13 +45,15 @@
 </Section>
 
 <Section id="termine" title="Termine">
-    <GigList gigs={gigs.slice(0, 3)} />
+    <GigList gigs={gigs.slice(0, gigCount)} />
 
-    <div class="mt-2 flex items-center justify-end">
-        <a href="/termine" class="inline-flex text-sm text-blue-500 hover:text-blue-700 focus:text-blue-700">
-            Zu allen Termine <ChevronRight class="inline" size={20} />
-        </a>
-    </div>
+    {#if gigs.length > gigCount}
+        <div class="mt-2 flex items-center justify-end">
+            <a href="/termine" class="inline-flex text-sm text-blue-500 hover:text-blue-700 focus:text-blue-700">
+                Zu allen Termine <ChevronRight class="inline" size={20} />
+            </a>
+        </div>
+    {/if}
 </Section>
 
 <Contact />
