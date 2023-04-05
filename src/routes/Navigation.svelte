@@ -15,6 +15,13 @@
     $: tabIndexNav = $navigationModal.isOpen ? null : -1;
 
     export const openNavigation = navigationModal.open;
+
+    const navigationItems = [
+        { href: '/#chor', text: 'Chor' },
+        { href: '/#chorleiter', text: 'Chorleiter' },
+        { href: '/#termine', text: 'Termine' },
+        { href: '/#kontakt', text: 'Kontakt' },
+    ];
 </script>
 
 <svelte:window on:popstate={navigationModal.onPopstate} />
@@ -26,24 +33,13 @@
 >
     <div class="container relative mx-auto p-8">
         <ul class="flex flex-col gap-4 p-4">
-            <li>
-                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="/#chor">Chor</a>
-            </li>
-            <li>
-                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="/#chorleiter"
-                    >Chorleiter</a
-                >
-            </li>
-            <li>
-                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="/#termine"
-                    >Termine</a
-                >
-            </li>
-            <li>
-                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="/#kontakt"
-                    >Kontakt</a
-                >
-            </li>
+            {#each navigationItems as item}
+                <li>
+                    <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href={item.href}
+                        >{item.text}</a
+                    >
+                </li>
+            {/each}
         </ul>
 
         <button tabindex={tabIndexNav} class="absolute right-6 top-6 p-2" on:click={navigationModal.close}>
