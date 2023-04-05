@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { ChevronDown, ChevronRight } from 'lucide-svelte';
+    import { ChevronDown, ChevronRight, TicketIcon } from 'lucide-svelte';
     import GigLine from './GigLine.svelte';
 
     export let title: string;
@@ -7,6 +7,7 @@
     export let place: string[];
     export let price: string | undefined;
     export let entryTime: string | undefined;
+    export let linkTickets: string | undefined;
 
     let expanded = false;
     const toggle = () => (expanded = !expanded);
@@ -48,6 +49,28 @@
         {/if}
 
         <p class="mt-2 text-sm"><slot /></p>
+
+        {#if linkTickets !== undefined}
+            <div class="mt-2 flex justify-end">
+                <a
+                    href={linkTickets}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="
+                        flex gap-2 rounded-md bg-accent px-4 py-2 text-center text-sm font-semibold
+                        text-white shadow-sm transition-colors duration-100 ease-in-out
+                        hover:bg-accent-light focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2
+                        focus-visible:outline-slate-500
+                    "
+                    on:click={(e) => {
+                        e.stopPropagation();
+                    }}
+                >
+                    Tickets
+                    <TicketIcon class="inline" size={20} />
+                </a>
+            </div>
+        {/if}
     {:else}
         <p class="text-sm">{time} @ {place[0]}</p>
     {/if}

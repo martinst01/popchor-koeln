@@ -10,6 +10,7 @@ export const gigs: Gig[] = [
             Unser kleines Konzertwochenende im April startet in Mönchengladbach mit dem wunderbaren Vokalensemble
             Piece of Peace!
         `,
+        linkTickets: 'http://projekt42.info/tickets/',
         link: 'https://www.piece-of-peace.de',
         linkText: 'piece-of-peace.de',
         entryTime: 'ab 19:30 Uhr',
@@ -23,6 +24,7 @@ export const gigs: Gig[] = [
             Der zweite Stopp unserer kleinen Tour ist in Dortmund bei der grandiosen Vocal Crew, die letztes Jahr beim
             Sing & Swing Festival auch zum Meisterchor gekürt wurde!
         `,
+        linkTickets: 'https://www.vocalcrew.com/termine/tickets/',
         link: 'https://www.vocalcrew.com',
         linkText: 'vocalcrew.com',
         entryTime: 'ab 18:00 Uhr',

@@ -6,6 +6,7 @@ export type Gig = {
     place: string[];
     price?: string;
     description: string;
+    linkTickets?: string;
     link?: string;
     linkText?: string;
     entryTime?: string;

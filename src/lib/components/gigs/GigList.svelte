@@ -6,8 +6,8 @@
 </script>
 
 <div class="space-y-4">
-    {#each gigs as { title, time, place, price, entryTime, description, link, linkText }}
-        <GigEntry {title} {time} {place} {price} {entryTime}>
+    {#each gigs as { title, time, place, price, entryTime, description, linkTickets, link, linkText }}
+        <GigEntry {title} {time} {place} {price} {entryTime} {linkTickets}>
             {#if link === undefined}
                 {description}
             {:else}
