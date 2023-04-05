@@ -5,8 +5,8 @@
     export let title: string;
     export let time: string;
     export let place: string[];
-    export let price: string;
-    export let entryTime: string;
+    export let price: string | undefined;
+    export let entryTime: string | undefined;
 
     let expanded = false;
     const toggle = () => (expanded = !expanded);
@@ -40,8 +40,12 @@
                 {/each}
             </div>
         </GigLine>
-        <GigLine label="Preis">{price}</GigLine>
-        <GigLine label="Einlass">{entryTime}</GigLine>
+        {#if price !== undefined}
+            <GigLine label="Preis">{price}</GigLine>
+        {/if}
+        {#if entryTime !== undefined}
+            <GigLine label="Einlass">{entryTime}</GigLine>
+        {/if}
 
         <p class="mt-2 text-sm"><slot /></p>
     {:else}

@@ -4,9 +4,9 @@ export type Gig = {
     title: string;
     time: string;
     place: string[];
-    price: string;
+    price?: string;
     description: string;
-    link: string;
-    linkText: string;
-    entryTime: string;
+    link?: string;
+    linkText?: string;
+    entryTime?: string;
 };
