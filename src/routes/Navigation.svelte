@@ -1,71 +1,52 @@
 <script lang="ts">
     import { browser } from '$app/environment';
+    import { modalStore } from '$lib/modal';
     import { X } from 'lucide-svelte';
 
-    let navigationExpanded = false;
+    let navigationModal = modalStore('navigation-open');
     let tabIndexNav: number | null;
 
     $: if (browser) {
-        navigationExpanded
+        $navigationModal.isOpen
             ? document.body.classList.add('overflow-hidden')
             : document.body.classList.remove('overflow-hidden');
     }
 
-    $: tabIndexNav = navigationExpanded ? null : -1;
+    $: tabIndexNav = $navigationModal.isOpen ? null : -1;
 
-    export const toggleNavigation = () => {
-        if (navigationExpanded) {
-            navigationExpanded = false;
-            history.back();
-        } else {
-            navigationExpanded = true;
-            history.pushState(null, '', null);
-        }
-    };
-
-    const onKeydown = (e: KeyboardEvent) => {
-        if (e.key === 'Escape' && navigationExpanded) {
-            toggleNavigation();
-        }
-    };
-
-    const onPopstate = () => {
-        if (navigationExpanded) {
-            navigationExpanded = false;
-        }
-    };
+    export const openNavigation = navigationModal.open;
 </script>
 
-<svelte:window on:popstate={onPopstate} />
-<svelte:body on:keydown={onKeydown} />
+<svelte:window on:popstate={navigationModal.onPopstate} />
+<svelte:body on:keydown={navigationModal.onKeydown} />
 
 <nav
     class="fixed inset-0 z-10 bg-white/90 transition-transform duration-200 ease-in-out"
-    class:-translate-y-full={!navigationExpanded}
+    class:-translate-y-full={!$navigationModal.isOpen}
 >
     <div class="container relative mx-auto p-8">
         <ul class="flex flex-col gap-4 p-4">
             <li>
-                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="#chor">Chor</a>
+                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="/#chor">Chor</a>
             </li>
             <li>
-                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="#chorleiter"
+                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="/#chorleiter"
                     >Chorleiter</a
                 >
             </li>
             <li>
-                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="#termine"
+                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="/#termine"
                     >Termine</a
                 >
             </li>
             <li>
-                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="#kontakt"
+                <a tabindex={tabIndexNav} class="text-lg hover:text-accent active:text-accent" href="/#kontakt"
                     >Kontakt</a
                 >
             </li>
         </ul>
 
-        <button tabindex={tabIndexNav} class="absolute right-6 top-6 p-2" on:click={toggleNavigation}>
+        <button tabindex={tabIndexNav} class="absolute right-6 top-6 p-2" on:click={navigationModal.close}>
             <X class="hover:text-slate-500" size={32} />
         </button>
     </div>

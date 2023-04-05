@@ -4,7 +4,7 @@
     import imageHeader320 from '$lib/assets/header-320px.png';
     import { Menu } from 'lucide-svelte';
 
-    export let toggleNavigation: () => void;
+    export let openNavigation: () => void;
 </script>
 
 <header>
@@ -17,7 +17,7 @@
             </h1>
         </a>
 
-        <button class="absolute right-6 top-6 p-2" on:click={toggleNavigation}>
+        <button class="absolute right-6 top-6 p-2" on:click={openNavigation}>
             <Menu class="text-accent" size={32} />
         </button>
     </div>

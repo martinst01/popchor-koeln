@@ -5,12 +5,12 @@
     import Header from './Header.svelte';
     import Navigation from './Navigation.svelte';
 
-    let toggleNavigation: () => void;
+    let openNavigation: () => void;
 </script>
 
-<Header {toggleNavigation} />
+<Header {openNavigation} />
 
-<Navigation bind:toggleNavigation />
+<Navigation bind:openNavigation />
 
 <slot />
 
