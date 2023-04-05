@@ -8,9 +8,7 @@
 <div class="space-y-4">
     {#each gigs as { title, time, place, price, entryTime, description, linkTickets, link, linkText }}
         <GigEntry {title} {time} {place} {price} {entryTime} {linkTickets}>
-            {#if link === undefined}
-                {description}
-            {:else}
+            {#if link}
                 <span class="after:content-['>>>']">{description}</span>
                 <a
                     href={link}
@@ -18,6 +16,8 @@
                     rel="noopener noreferrer"
                     class="text-blue-500 hover:text-blue-700 focus:text-blue-700">{linkText}</a
                 >
+            {:else}
+                {description}
             {/if}
         </GigEntry>
     {/each}

@@ -41,16 +41,16 @@
                 {/each}
             </div>
         </GigLine>
-        {#if price !== undefined}
+        {#if price}
             <GigLine label="Preis">{price}</GigLine>
         {/if}
-        {#if entryTime !== undefined}
+        {#if entryTime}
             <GigLine label="Einlass">{entryTime}</GigLine>
         {/if}
 
         <p class="mt-2 text-sm"><slot /></p>
 
-        {#if linkTickets !== undefined}
+        {#if linkTickets}
             <div class="mt-2 flex justify-end">
                 <a
                     href={linkTickets}
