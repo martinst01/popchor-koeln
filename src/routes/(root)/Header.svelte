@@ -1,4 +1,5 @@
 <script lang="ts">
+    import LogoDacSvg from '$lib/assets/LogoDacSvg.svelte';
     import imageHeader160 from '$lib/assets/header-160px.png';
     import imageHeader240 from '$lib/assets/header-240px.png';
     import imageHeader320 from '$lib/assets/header-320px.png';
@@ -10,10 +11,10 @@
 <header>
     <div class="container relative mx-auto p-8 pb-4">
         <a href="/">
-            <h1 class="text-center text-4xl font-bold leading-[4rem]">
-                d'acCHORd
+            <h1 class="flex flex-col items-center space-y-4 text-4xl font-bold">
+                <LogoDacSvg class="h-20" />
                 <small class="block text-2xl">heißt jetzt</small>
-                popCHORköln
+                <span>popCHORköln</span>
             </h1>
         </a>
 
