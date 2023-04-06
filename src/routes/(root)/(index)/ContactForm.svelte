@@ -40,9 +40,14 @@
     <h3 class="text-lg font-bold">Kontaktformular</h3>
 
     <p>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ratione, laborum pariatur itaque earum, alias
-        reprehenderit dolorem perferendis animi blanditiis cupiditate incidunt quo aliquam sunt voluptatibus iste,
-        possimus architecto doloribus!
+        Sei es Lob, Kritik, eine Auftrittsanfrage oder einfach so - schreibt uns einfach über unser Kontaktformular. Wir
+        freuen uns auf eure Nachrichten!
+    </p>
+
+    <p>
+        Habt ihr bereits Chorerfahrung und Interesse bei uns mitzusingen? Auch dann könnt ihr uns gerne schreiben,
+        allerdings sind wir momentan in den Frauenstimmen voll besetzt und können euch nur für unser nächstes Vorsingen
+        vormerken. In den Männerstimmen gibt es noch das ein oder andere Plätzchen 🙂
     </p>
 
     <form class="space-y-3" on:submit|preventDefault={onSubmit}>

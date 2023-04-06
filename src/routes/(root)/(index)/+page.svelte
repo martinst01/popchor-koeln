@@ -5,6 +5,7 @@
     import { ChevronRight } from 'lucide-svelte';
     import Contact from './Contact.svelte';
 
+    let textExpand = false;
     const gigCount = 5;
 </script>
 
@@ -12,35 +13,36 @@
     <title>Startseite - popCHORköln</title>
 </svelte:head>
 
-<Section id="chor" title="Chor">
+<Section id="chor" title="Chor" classContent="space-y-4">
     <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolor nihil unde, natus reiciendis possimus
-        velit magni voluptatum reprehenderit iure, similique odio ullam maxime corrupti qui itaque ad, repellendus
-        perspiciatis exercitationem. Labore facilis voluptas numquam aliquid quibusdam possimus odit eos explicabo
-        vitae, odio dolor doloremque fuga eveniet consequatur! Dolore soluta cupiditate asperiores recusandae minima id
-        quisquam corrupti ratione deleniti dolorem libero magnam laudantium voluptate animi sit aliquid similique
-        provident, maxime eius, molestias error omnis excepturi quasi? Facilis accusantium ipsa soluta, perspiciatis
-        saepe, eos repellendus aperiam blanditiis inventore eveniet modi dolorem? Laboriosam nulla voluptate at odit,
-        quos ipsum atque aut repudiandae sunt impedit fuga corporis repellat suscipit blanditiis quod sint ipsam,
-        accusamus quis laudantium rem modi, velit autem totam? Sit eum neque maiores sequi expedita laborum libero
-        officiis saepe totam dolore ratione voluptatibus, et vel pariatur. Obcaecati commodi ipsa nam laudantium.
-        Placeat ullam illum suscipit, dolore sit repudiandae id non eveniet!
+        Der <strong>popCHORköln</strong>, ehemals <strong>d'acCHORd</strong>, besteht aus rund 60 Sänger:innen aus Köln
+        und Umgebung. Das Repertoire umfasst hauptsächlich Popmusik in anspruchsvollen A-cappella-Arrangements, aber
+        auch speziell für den Chor arrangierte, weniger bekannte Stücke aus Genres abseits des Mainstreams, Rock- und
+        Gospelsongs sowie Werke der Klassik.
+        <button
+            class="ml-2 whitespace-nowrap text-accent hover:text-accent-light focus:text-accent-light"
+            on:click={() => (textExpand = true)}
+            class:hidden={textExpand}>mehr lesen&hellip;</button
+        >
+    </p>
+
+    <p class:hidden={!textExpand}>
+        Die Idee, einen Chor zu gründen, entstand 2013 auf einer WG-Party. Kurz darauf fand unter der Leitung von Niklas
+        Genschel die erste Probe statt. Es entstand ein spannendes und stetig wachsendes Chor-Projekt mit zahlreichen
+        Konzerten, diversen Medienauftritten sowie aufwendigen Film- und Videoproduktionen. Inzwischen zählt der Chor zu
+        einem der renommiertesten Laienensembles für Chor- und Popmusik in Köln und Umgebung. Das zeigt sich auch im
+        Namen: 2023 benannte sich die Gruppe in <strong>popCHORköln</strong> um. Auf der Bühne verbindet der Chor anspruchsvolle
+        Songs mit lockeren und authentischen Performances und begeistert damit ein seit Jahren wachsendes Publikum.
     </p>
 </Section>
 
 <Section id="chorleiter" title="Chorleiter">
     <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit dolor nihil unde, natus reiciendis possimus
-        velit magni voluptatum reprehenderit iure, similique odio ullam maxime corrupti qui itaque ad, repellendus
-        perspiciatis exercitationem. Labore facilis voluptas numquam aliquid quibusdam possimus odit eos explicabo
-        vitae, odio dolor doloremque fuga eveniet consequatur! Dolore soluta cupiditate asperiores recusandae minima id
-        quisquam corrupti ratione deleniti dolorem libero magnam laudantium voluptate animi sit aliquid similique
-        provident, maxime eius, molestias error omnis excepturi quasi? Facilis accusantium ipsa soluta, perspiciatis
-        saepe, eos repellendus aperiam blanditiis inventore eveniet modi dolorem? Laboriosam nulla voluptate at odit,
-        quos ipsum atque aut repudiandae sunt impedit fuga corporis repellat suscipit blanditiis quod sint ipsam,
-        accusamus quis laudantium rem modi, velit autem totam? Sit eum neque maiores sequi expedita laborum libero
-        officiis saepe totam dolore ratione voluptatibus, et vel pariatur. Obcaecati commodi ipsa nam laudantium.
-        Placeat ullam illum suscipit, dolore sit repudiandae id non eveniet!
+        Niklas Genschel ist Schlagzeuger, Musikpädagoge und Chorleiter. Während seines Studiums (Jazz- und Popschlagzeug
+        in Köln und Arnheim) belegte er auch einige Semester Dirigieren und Chorleitung und sang selbst im Kammerchor
+        der Musikhochschule Köln unter der Leitung von Marcus Creed (SWR Vokalensemble Stuttgart). Wenn er nicht gerade
+        mit dem <strong>popCHORköln</strong> probt oder für ihn arrangiert, tobt er sich in weiteren Chor-Projekten (u. a.
+        Popchor der Technischen Hochschule Köln, Vokalorchester NRW) aus oder tourt mit seiner Band Sohnemann durch Deutschland.
     </p>
 </Section>
 
