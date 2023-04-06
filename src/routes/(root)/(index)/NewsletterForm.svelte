@@ -32,7 +32,7 @@
 </script>
 
 <div class="space-y-2">
-    <h3 class="text-lg font-bold">Newsletter</h3>
+    <h3 class="font-heading text-lg font-bold">Newsletter</h3>
 
     <p>
         Trage dich in unseren Newsletter ein und bleibe so immer auf dem neusten Stand zu unseren Konzerten, Videos und

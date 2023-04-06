@@ -11,7 +11,7 @@
 <header>
     <div class="container relative mx-auto p-8 pb-4">
         <a href="/">
-            <h1 class="flex flex-col items-center space-y-4 text-4xl font-bold">
+            <h1 class="flex flex-col items-center space-y-4 font-heading text-4xl font-bold">
                 <LogoDacSvg class="h-20" />
                 <small class="block text-2xl">heißt jetzt</small>
                 <span>popCHORköln</span>

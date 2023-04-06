@@ -37,7 +37,7 @@
 </script>
 
 <div class="space-y-2 {classes}">
-    <h3 class="text-lg font-bold">Kontaktformular</h3>
+    <h3 class="font-heading text-lg font-bold">Kontaktformular</h3>
 
     <p>
         Sei es Lob, Kritik, eine Auftrittsanfrage oder einfach so - schreibt uns einfach über unser Kontaktformular. Wir

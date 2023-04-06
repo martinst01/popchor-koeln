@@ -29,9 +29,9 @@
         51379 Leverkusen
     </p>
 
-    <h3 class="pt-2 text-2xl">Haftungsausschluss</h3>
+    <h3 class="pt-2 font-heading text-2xl">Haftungsausschluss</h3>
 
-    <h4 class="pt-1 text-xl">Haftung für Inhalte</h4>
+    <h4 class="pt-1 font-heading text-xl">Haftung für Inhalte</h4>
     <p>
         Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und
         Aktualität der Inhalte können wir jedoch keine Gewähr übernehmen. Als Diensteanbieter sind wir gemäß § 7 Abs.1
@@ -43,7 +43,7 @@
         möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
     </p>
 
-    <h4 class="pt-1 text-xl">Haftung für Links</h4>
+    <h4 class="pt-1 font-heading text-xl">Haftung für Links</h4>
     <p>
         Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb
         können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist
@@ -54,7 +54,7 @@
         derartige Links umgehend entfernen.
     </p>
 
-    <h3 class="pt-2 text-2xl">Urheberrecht</h3>
+    <h3 class="pt-2 font-heading text-2xl">Urheberrecht</h3>
     <p>
         Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen
         Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen
