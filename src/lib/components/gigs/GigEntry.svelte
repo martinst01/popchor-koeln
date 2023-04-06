@@ -25,9 +25,9 @@
 >
     <h3 class="flex items-start font-heading font-bold" class:mb-2={expanded}>
         {#if expanded}
-            <ChevronDown class="-ml-1 mt-0.5 inline-block flex-shrink-0" size={20} />
+            <ChevronDown class="-ml-1 inline-block flex-shrink-0" size={20} />
         {:else}
-            <ChevronRight class="-ml-1 mt-0.5 inline-block flex-shrink-0" size={20} />
+            <ChevronRight class="-ml-1 inline-block flex-shrink-0" size={20} />
         {/if}
         {title}
     </h3>
