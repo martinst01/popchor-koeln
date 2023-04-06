@@ -3,9 +3,12 @@ const config = {
 
     theme: {
         fontFamily: {
-            sans: ['Open Sans'],
+            sans: ['Avenir', 'Arial'],
         },
         extend: {
+            fontFamily: {
+                heading: ['AvenirBook', 'Arial'],
+            },
             screens: {
                 xs: '480px',
             },
