@@ -21,7 +21,9 @@
 
     <Navigation bind:openNavigation />
 
-    <slot />
+    <main>
+        <slot />
+    </main>
 
     <Footer />
 {/if}
