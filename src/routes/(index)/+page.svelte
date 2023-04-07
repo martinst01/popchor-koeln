@@ -3,7 +3,8 @@
     import GigList from '$lib/components/gigs/GigList.svelte';
     import { gigs } from '$lib/data/gigs';
     import { ChevronRight } from 'lucide-svelte';
-    import Contact from './Contact.svelte';
+    import ContactForm from './ContactForm.svelte';
+    import NewsletterForm from './NewsletterForm.svelte';
 
     let textExpand = false;
     const gigCount = 5;
@@ -58,4 +59,8 @@
     {/if}
 </Section>
 
-<Contact />
+<Section id="kontakt" title="Kontakt" classContent="space-y-6">
+    <NewsletterForm />
+
+    <ContactForm />
+</Section>

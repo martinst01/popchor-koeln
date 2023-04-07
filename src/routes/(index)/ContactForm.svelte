@@ -5,8 +5,6 @@
     import Checkbox from './Checkbox.svelte';
     import SubmitButton from './SubmitButton.svelte';
 
-    export let classes: string;
-
     let name: string;
     let email: string;
     let subject: string;
@@ -36,7 +34,7 @@
     };
 </script>
 
-<div class="space-y-2 {classes}">
+<div class="space-y-2">
     <h3 class="font-heading text-lg font-bold">Kontaktformular</h3>
 
     <p>
