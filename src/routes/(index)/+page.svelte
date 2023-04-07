@@ -20,12 +20,15 @@
         und Umgebung. Das Repertoire umfasst hauptsächlich Popmusik in anspruchsvollen A-cappella-Arrangements, aber
         auch speziell für den Chor arrangierte, weniger bekannte Stücke aus Genres abseits des Mainstreams, Rock- und
         Gospelsongs sowie Werke der Klassik.
-        <button
-            class="ml-2 whitespace-nowrap text-accent hover:text-accent-light focus:text-accent-light"
-            on:click={() => (textExpand = true)}
-            class:hidden={textExpand}>mehr lesen&hellip;</button
-        >
     </p>
+
+    <div class="flex justify-end">
+        <button
+            class="flex text-accent hover:text-accent-light focus:text-accent-light"
+            on:click={() => (textExpand = true)}
+            class:hidden={textExpand}>mehr lesen&hellip; <ChevronRight class="inline" size={20} /></button
+        >
+    </div>
 
     <p class:hidden={!textExpand}>
         Die Idee, einen Chor zu gründen, entstand 2013 auf einer WG-Party. Kurz darauf fand unter der Leitung von Niklas
