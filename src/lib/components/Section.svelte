@@ -11,7 +11,7 @@
             before:absolute before:inset-x-0 before:top-1/2 before:h-px before:bg-slate-500
         "
     >
-        <h2 class="relative bg-white px-8 font-heading text-3xl font-medium first-letter:text-accent">{title}</h2>
+        <h2 class="relative bg-white px-8 font-heading text-3xl first-letter:text-accent">{title}</h2>
     </hgroup>
 
     <div class="px-4 sm:px-8 lg:px-16 {classContent}">
